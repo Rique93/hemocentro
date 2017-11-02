@@ -32,15 +32,21 @@
                 
                     
                
+             
+                    
                 <h:column>
                     <div class="col-xs-12 col-sm-2 col-md-2">
-                        <h:commandLink value="Teste" 
-                            action="doador"/>
+                        <f:facet name="header">Teste</f:facet>
                             
-
+                        <h:commandButton value="Teste" action="doador">
+                            <f:setPropertyActionListener target="#{pretriagemMB.doadores}" value="#{doadores}"/>
+                        </h:commandButton>
                     </div>
                 </h:column>
-                    
+                
+                <h:column>
+                    <h:commandLink value="Teste2" action="#{pretriagemMB.teste}"/>
+                </h:column>
             </h:dataTable>
             <h:commandButton value="Voltar" action="index"/>
         </h:form>
