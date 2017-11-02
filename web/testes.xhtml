@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-theme.css"/>
+        <h:outputStylesheet library="css" name="custom.css"/>
+
+
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2"><br/>
+                <!-- Standard button -->
+                <button type="button" class="btn btn-default">Default</button>
+
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <button type="button" class="btn btn-primary">Primary</button>
+
+                <!-- Indicates a successful or positive action -->
+                <button type="button" class="btn btn-success">Success</button>
+
+                <!-- Contextual button for informational alert messages -->
+                <button type="button" class="btn btn-info">Info</button>
+
+                <!-- Indicates caution should be taken with this action -->
+                <button type="button" class="btn btn-warning">Warning</button>
+
+                <!-- Indicates a dangerous or potentially negative action -->
+                <button type="button" class="btn btn-danger">Danger</button>
+
+                <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+                <button type="button" class="btn btn-link">Link</button>
+
+
+
+
+
+                <br/><br/>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-danger">Editar</button>
+                    <button type="button" class="btn btn-danger">Apagar</button>
+                </div>
+
+
+                <br/><br/>
+                <!-- Single button --> 
+                <div class= "btn-group" > 
+                    <button type= "button" class= "btn btn-default dropdown-toggle" data-toggle= "dropdown" aria-haspopup= "true" aria-expanded= "false" > 
+                        Action 
+                        <span class= "caret" ></span> 
+                    </button> 
+                    
+                    <ul class= "dropdown-menu" > 
+                        <li><a href= "#" > Action </a></li> 
+                        <li><a href= "#" > Another action </a></li> 
+                        <li><a href= "#" > Something else here </a></li> 
+                        <li role= "separator" class= "divider" ></li> 
+                        <li><a href= "#" > Separated link </a></li> 
+                    </ul> 
+                </div>
+                
+                <br/><br/>
+                
+                <!-- Single button --> <div class= "btn-group" > <button type= "button" class= "btn btn-default dropdown-toggle" data-toggle= "dropdown" aria-haspopup= "true" aria-expanded= "false" > Action <span class= "caret" ></span> </button> <ul class= "dropdown-menu" > <li><a href= "#" > Action </a></li> <li><a href= "#" > Another action </a></li> <li><a href= "#" > Something else here </a></li> <li role= "separator" class= "divider" ></li> <li><a href= "#" > Separated link </a></li> </ul> </div>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

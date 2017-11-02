@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Pré-triagens</title>
+
+        
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="custom.css"/>
+        
+        
+        
+       <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputScript target="body" library="jquery" name="jquery-3.2.1.min.js"/>
+        <h:outputScript target="body" library="js" name="bootstrap.min.js"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
+
+        
+                    
+                    
+        <h2 data-toggle="collapse" data-target="#demo">Identificação:</h2>
+                    <hr class="colorgraph"/>
+
+                    <h:form id="demo" class="collapse">
+                        <h:panelGroup id="painelIdentificacao" >
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+
+                                    <h:inputText id="edIdDoador" value="#{doadorMB.doador.idDoador}" a:placeholder="Nº Doador" styleClass="form-control input-lg"/>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-9 col-md-9">
+
+                                    <h:inputText id="edNomeDoador" value="#{doadorMB.doador.nomeDoador}" a:placeholder="Nome completo" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+
+                                    <!--<h:outputLabel id="lbSexo" value="Sexo:"/>-->
+                                    <h:selectOneMenu value = "#{doadorMB.doador.sexo}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemValue = "Feminino" itemLabel = "Feminino" /> 
+                                        <f:selectItem itemValue = "Masculino" itemLabel = "Masculino" />
+                                    </h:selectOneMenu>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <h:inputText id="edDataNascimento" value="#{doadorMB.doador.dataNascimento}" a:placeholder="Data de nascimento" styleClass="form-control input-lg">
+                                        <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-3:00"/>
+                                    </h:inputText>
+                                    <br/>
+                                </div>
+
+
+
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <h:inputText id="edNumeroDocumento" value="#{doadorMB.doador.numeroDocumento}" a:placeholder="Nº documento" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-9 col-md-9">
+                                    <!--<h:outputLabel id="lbOrgaoExpeditor" value="Órgão Expeditor:" />-->
+                                    <h:selectOneMenu value = "#{doadorMB.doador.orgaoExpeditor}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemValue = "Secretária de Segurança Pública" itemLabel = "SSP - Secretária de Segurança Pública" /> 
+                                        <f:selectItem itemValue = "Secretaria da Justiça e Segurança" itemLabel = "SJS - Secretaria da Justiça e Segurança" />
+                                        <f:selectItem itemValue = "Ministério do Trabalho e Emprego" itemLabel = "MTE - Ministério do Trabalho e Emprego" />
+                                        <f:selectItem itemValue = "Ministério do Exército" itemLabel = "ME - Ministério do Exército" />
+                                        <f:selectItem itemValue = "Secretaria da Justiça do Trabalho e Segurança" itemLabel = "SJTS - Secretaria da Justiça do Trabalho e Segurança" />
+                                        <f:selectItem itemValue = "Ministério da Aeronáutica" itemLabel = "MA - Ministério da Aeronáutica" />
+                                        <f:selectItem itemValue = "Ministério da Marinha" itemLabel = "MM - Ministério da Marinha" />
+                                        <f:selectItem itemValue = "Conselho Regional (CREA/CRM/CRA/CBM/CRO/CRF)" itemLabel = "Conselho Regional (CREA/CRM/CRA/CBM/CRO/CRF)" />
+                                        <f:selectItem itemValue = "Ordem dos Advogados do Brasil" itemLabel = "OAB - Ordem dos Advogados do Brasil" />
+                                        <f:selectItem itemValue = "Outro" itemLabel = "Outro" />
+                                    </h:selectOneMenu>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <!--<h:outputLabel id="lbTipoDocumento" value="Documento:" />-->
+                                    <h:selectOneMenu value = "#{doadorMB.doador.tipoDocumento}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemValue = "Carteira de Identidade" itemLabel = "Carteira de Identidade" /> 
+                                        <f:selectItem itemValue = "Carteira de Trabalho" itemLabel = "Carteira de Trabalho" />
+                                        <f:selectItem itemValue = "Carteira Nacional de Habilitação" itemLabel = "CNH - Carteira Nacional de Habilitação" />
+                                        <f:selectItem itemValue = "Carteira de Identidade Profissional" itemLabel = "Carteira de Identidade Profissional" />
+                                        <f:selectItem itemValue = "Certificado de Reservista" itemLabel = "Certificado de Reservista" />
+                                        <f:selectItem itemValue = "Certificado de Dispensa de Incorporação" itemLabel = "Certificado de Dispensa de Incorporação" />
+                                        <f:selectItem itemValue = "Passaporte" itemLabel = "Passaporte" />
+                                        <f:selectItem itemValue = "Outro" itemLabel = "Outro" />
+                                    </h:selectOneMenu>
+                                </div>
+
+
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <h:inputText id="edNacionalidade" value="#{doadorMB.doador.nacionalidade}" a:placeholder="Nacionalidade" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <h:inputText id="edNaturalidade" value="#{doadorMB.doador.naturalidade}" a:placeholder="Naturalidade" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <h:inputText id="edFiliacaoMaterna" value="#{doadorMB.doador.filiacaoMaterna}" a:placeholder="Nome completo da mãe" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <h:inputText id="edFiliacaoPaterna" value="#{doadorMB.doador.filiacaoPaterna}" a:placeholder="Nome completo do pai" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <h:inputText id="edOcupacaoHabitual" value="#{doadorMB.doador.ocupacaoHabitual}" a:placeholder="Ocupação" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <!--<h:outputLabel id="lbEscolaridade" value="Escolaridade:" />-->
+                                    <h:selectOneMenu value="#{doadorMB.doador.escolaridade}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemValue = "Analfabeto" itemLabel = "Analfabeto" /> 
+                                        <f:selectItem itemValue = "Ensino Fundamental Incompleto" itemLabel = "Ensino Fundamental Incompleto" />
+                                        <f:selectItem itemValue = "Ensino Fundamental Completo" itemLabel = "Ensino Fundamental Completo" />
+                                        <f:selectItem itemValue = "Ensino Médio Incompleto" itemLabel = "Ensino Médio Incompleto" />
+                                        <f:selectItem itemValue = "Ensino Médio Completo" itemLabel = "Ensino Médio Completo" />
+                                        <f:selectItem itemValue = "Ensino Superior Incompleto" itemLabel = "Ensino Superior Incompleto" />
+                                        <f:selectItem itemValue = "Ensino Superior Completo" itemLabel = "Ensino Superior Completo" />                                        
+                                        <f:selectItem itemValue = "Outro" itemLabel = "Outro" />
+                                    </h:selectOneMenu>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+
+                                    <h:inputText id="edCEP" value="#{doadorMB.doador.cep}" a:placeholder="CEP" styleClass="form-control input-lg"/>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-8 col-md-8">
+
+                                    <h:inputText id="edLogradouro" value="#{doadorMB.doador.logradouro}" a:placeholder="Rua" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    <h:inputText id="edNumeroResidencia" value="#{doadorMB.doador.numeroResidencia}" a:placeholder="Nº" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-5 col-md-5">
+                                    <h:inputText id="edBairro" value="#{doadorMB.doador.bairro}" a:placeholder="Bairro" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-5 col-md-5">
+                                    <h:inputText id="edCidade" value="#{doadorMB.doador.cidade}" a:placeholder="Cidade" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <h:inputText id="edTelefone" value="#{doadorMB.doador.telefone}" a:placeholder="Nº contato" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-8 col-md-8">
+                                    <h:inputText id="edEmail" value="#{doadorMB.doador.email}" a:placeholder="E-mail" styleClass="form-control input-lg"/>
+                                    <br/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <!--<h:outputLabel id="lbTipoSanguineo" value="Tipo Sanguíneo:"/>-->
+                                    <h:selectOneMenu value = "#{doadorMB.doador.tipoSanguineo}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemValue = "A Positivo" itemLabel = "(A+) - A Positivo" /> 
+                                        <f:selectItem itemValue = "A Negativo" itemLabel = "(A-) - A Negativo" />
+                                        <f:selectItem itemValue = "B Positivo" itemLabel = "(B+) - B Positivo" /> 
+                                        <f:selectItem itemValue = "B Negativo" itemLabel = "(B-) - B Negativo" />
+                                        <f:selectItem itemValue = "AB Positivo" itemLabel = "(AB+) - AB Positivo" /> 
+                                        <f:selectItem itemValue = "AB Negativo" itemLabel = "(AB-) - AB Negativo" />
+                                        <f:selectItem itemValue = "O Positivo" itemLabel = "(O+) - O Positivo" /> 
+                                        <f:selectItem itemValue = "O Negativo" itemLabel = "(O-) - O Negativo" />
+                                    </h:selectOneMenu>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-sm-6">
+                                    <!--<h:outputLabel id="lbUsuarioIdentificacao" value="Usuário:" />-->
+                                    <h:selectOneMenu value="#{doadorMB.doador.usuarioIdentificacao}" converter="converterUsuario" styleClass="form-control input-lg">
+                                        <f:selectItems value="#{doadorMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
+                                    </h:selectOneMenu>
+                                    <br/>
+                                </div>
+                            </div>
+                        </h:panelGroup>
+                    </h:form>
+
+                </div>
+            </div>
+        </div>
+                    
+                    
+        <!--Parte 2-->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
+                    
+        <h2 data-toggle="collapse" data-target="#frm">Pré-triagem:</h2>
+        <hr class="colorgraph"/>
+
+        <h:form id="frm" class="collapse">
+            <h:panelGroup id="painelPreTriagem">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+
+                        <h:inputText id="edPulso" value="#{pretriagemMB.pretriagem.pulso}" a:placeholder="Pulso (BPM)" styleClass="form-control input-lg"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h:inputText id="edPressaoMinima" value="#{pretriagemMB.pretriagem.pressaoMi}" a:placeholder="Pressão Mín. (mmHg)" styleClass="form-control input-lg"/>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h:inputText id="edPressaoMaxima" value="#{pretriagemMB.pretriagem.pressaoMa}" a:placeholder="Pressão Máx. (mmHg)" styleClass="form-control input-lg"/><br/>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+
+                        <h:inputText id="edTemperatura" value="#{pretriagemMB.pretriagem.temperatura}" a:placeholder="Temperatura (ºC)" styleClass="form-control input-lg"/>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h:inputText id="edPeso" value="#{pretriagemMB.pretriagem.peso}" a:placeholder="Peso (Kg)" styleClass="form-control input-lg"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">   
+                        <h:inputText id="edAltura" value="#{pretriagemMB.pretriagem.altura}" a:placeholder="Altura (m)" styleClass="form-control input-lg">
+                            <f:convertNumber pattern="0.00"/>
+                        </h:inputText><br/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <h:inputText id="edHemoglobina" value="#{pretriagemMB.pretriagem.hemoglobina}" a:placeholder="Hemoglobina (g/dL)" styleClass="form-control input-lg">
+                            <f:convertNumber pattern="00.0"/>
+                        </h:inputText>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <h:inputText id="edHematocrito" value="#{pretriagemMB.pretriagem.hematocrito}" a:placeholder="Hematócrito (%)" styleClass="form-control input-lg">
+                            <f:convertNumber pattern="0.00"/>
+                        </h:inputText><br/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <!--<h:outputLabel id="lbHabilitacaoTriagem" value="Triagem:"/> -->  
+                        <h:selectOneMenu value = "#{pretriagemMB.pretriagem.habilitadoTriagem}" styleClass="form-control input-lg"> 
+                            <f:selectItem itemValue = "True" itemLabel = "Habilitado" /> 
+                            <f:selectItem itemValue = "False" itemLabel = "Não habilitado" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-sm-6">
+                        <h:selectOneMenu value="#{pretriagemMB.pretriagem.usuarioPretriagem}" converter="converterUsuario" styleClass="form-control input-lg">
+                            <f:selectItems value="#{pretriagemMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+
+            </h:panelGroup>
+        </h:form>
+
+        </div>
+        </div>
+        </div>
+        
+        
+        
+         <!--Parte 3-->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
+                    
+        <h2>Cadastro de triagem:</h2>
+        <hr class="colorgraph"/>
+
+        <h:form id="formTriagem" role="form">
+            <h:panelGroup id="painelTriagem">
+
+                
+
+            </h:panelGroup>
+            <h:commandButton value="Voltar" action="index"/>
+        </h:form>
+
+        </div>
+        </div>
+        </div>
+         
+    </h:body>
+</html>
+

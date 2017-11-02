@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Pré-triagens</title>
+
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="custom.css"/>
+        <h:outputScript target="body" library="js" name="bootstrap.min.js"/>
+
+
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
+
+        
+        <h2>Cadastro de pré-triagem:</h2>
+        <hr class="colorgraph"/>
+
+        <h:form id="frm" role="form">
+            <h:panelGroup id="painelPreTriagem">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+
+                        <h:inputText id="edPulso" value="#{pretriagemMB.pretriagem.pulso}" a:placeholder="Pulso (BPM)" styleClass="form-control input-lg"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h:inputText id="edPressaoMinima" value="#{pretriagemMB.pretriagem.pressaoMi}" a:placeholder="Pressão Mín. (mmHg)" styleClass="form-control input-lg"/>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h:inputText id="edPressaoMaxima" value="#{pretriagemMB.pretriagem.pressaoMa}" a:placeholder="Pressão Máx. (mmHg)" styleClass="form-control input-lg"/><br/>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+
+                        <h:inputText id="edTemperatura" value="#{pretriagemMB.pretriagem.temperatura}" a:placeholder="Temperatura (ºC)" styleClass="form-control input-lg"/>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h:inputText id="edPeso" value="#{pretriagemMB.pretriagem.peso}" a:placeholder="Peso (Kg)" styleClass="form-control input-lg"/>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">   
+                        <h:inputText id="edAltura" value="#{pretriagemMB.pretriagem.altura}" a:placeholder="Altura (m)" styleClass="form-control input-lg">
+                            <f:convertNumber pattern="0.00"/>
+                        </h:inputText><br/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <h:inputText id="edHemoglobina" value="#{pretriagemMB.pretriagem.hemoglobina}" a:placeholder="Hemoglobina (g/dL)" styleClass="form-control input-lg">
+                            <f:convertNumber pattern="00.0"/>
+                        </h:inputText>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <h:inputText id="edHematocrito" value="#{pretriagemMB.pretriagem.hematocrito}" a:placeholder="Hematócrito (%)" styleClass="form-control input-lg">
+                            <f:convertNumber pattern="0.00"/>
+                        </h:inputText><br/>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <!--<h:outputLabel id="lbHabilitacaoTriagem" value="Triagem:"/>-->
+                        <h:selectOneMenu value = "#{pretriagemMB.pretriagem.habilitadoTriagem}" styleClass="form-control input-lg"> 
+                            <f:selectItem itemValue = "True" itemLabel = "Habilitado" /> 
+                            <f:selectItem itemValue = "False" itemLabel = "Não habilitado" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-sm-6">
+                        <h:selectOneMenu value="#{pretriagemMB.pretriagem.usuarioPretriagem}" converter="converterUsuario" styleClass="form-control input-lg">
+                            <f:selectItems value="#{pretriagemMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+
+            </h:panelGroup><br/>
+
+            <div class="form-group">
+                <div class="col-xs-12 col-md-6">
+                    <h:commandButton value="Salvar" action="#{pretriagemMB.salvar()}" class="btn btn-success btn-block btn-lg" tabindex="7"/>
+                </div>
+            </div>
+            <h:commandButton value="Voltar" action="index"/>
+        </h:form>
+
+        </div>
+        </div>
+        </div>
+        
+    </h:body>
+</html>
+
