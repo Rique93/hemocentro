@@ -38,6 +38,8 @@ public class PretriagemMB implements Serializable{
     DAO<Doador> doadorDAO;
     List<Doador> doadores;
     
+    Doador doador;
+    
     
     public PretriagemMB() {
     }
@@ -54,6 +56,7 @@ public class PretriagemMB implements Serializable{
         
         
         pretriagem = new Pretriagem();
+        doador = new Doador();
         
         usuarios = usuarioDAO.getAll(Usuario.class, "Usuario.findAll");
         
@@ -143,5 +146,10 @@ public class PretriagemMB implements Serializable{
     /*
     
     */
+    
+    public String teste(Doador doador){
+        this.doador = doador;
+        return "doador";
+    }
     
 }
