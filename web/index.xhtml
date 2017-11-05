@@ -8,17 +8,18 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="1">
-                <h:commandButton value="Cadastro de funções" action="funcao"/>
-                <h:commandButton value="Cadastro de profissões" action="profissao"/>
-                <h:commandButton value="Cadastro de usuários" action="usuario"/>
-                <h:commandButton value="Cadastro de doadores" action="doador"/>
-                <h:commandButton value="Cadastro de pré-triagens" action="pretriagem"/>
-                <h:commandButton value="Cadastro de hospitais" action="hospital"/>
-                <h:commandButton value="Cadastro de receptores" action="receptor"/>
-                <br/>
-                <h:commandButton value="Funções" action="funcoes"/>
-                <h:commandButton value="Pré triagens" action="pretriagem_1"/>
-                <h:commandButton value="Triagens" action="triagem_1"/>
+                <h2>Cadastros</h2>
+                <h:commandButton value="Cadastro de funções" action="views/cadastros/funcao"/>
+                <h:commandButton value="Cadastro de hospitais" action="views/cadastros/hospital"/>
+                <h:commandButton value="Cadastro de profissões" action="views/cadastros/profissao"/>
+                <h:commandButton value="Cadastro de receptores" action="views/cadastros/receptor"/>
+                <h:commandButton value="Cadastro de usuários" action="views/cadastros/usuario"/>
+                
+                <h2>Etapas</h2>
+                <h:commandButton value="Identificação" action="views/etapas/doador"/>
+                <h:commandButton value="Pré-triagem" action="views/etapas/pretriagem"/>
+                <h:commandButton value="Triagem" action="views/etapas/triagem"/>
+                
             </h:panelGrid>
         </h:form>
     </h:body>

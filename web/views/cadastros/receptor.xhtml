@@ -6,32 +6,32 @@
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <title>Cadastro de receptores</title>
-        
+
         <h:outputStylesheet library="css" name="bootstrap.css"/>
         <h:outputStylesheet library="css" name="custom.css"/>
         <h:outputScript target="body" library="js" name="bootstrap.min.js"/>
     </h:head>
     <h:body>
-        
-                <div class="container">
+
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
 
-                    
-        <h2>Cadastro de receptores:</h2>
-        <hr class="colorgraph"/>
-        
-        <h:form id="frm" role="form">
-            <h:panelGroup id="painelReceptor">
-                
-                <div class="row">
+
+                    <h2>Cadastro de receptores:</h2>
+                    <hr class="colorgraph"/>
+
+                    <h:form id="frm" role="form">
+                        <h:panelGroup id="painelReceptor">
+
+                            <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    
-                <h:inputText id="edNomeReceptor" value="#{receptorMB.receptor.nomeReceptor}" a:placeholder="Nome completo" styleClass="form-control input-lg"/>
-                <br/>
+
+                                    <h:inputText id="edNomeReceptor" value="#{receptorMB.receptor.nomeReceptor}" a:placeholder="Nome completo" styleClass="form-control input-lg"/>
+                                    <br/>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                                    <!--<h:outputLabel id="lbHospital" value="Hospital:" />-->
+                                    <!--<h:outputLabel id="lbHospital" value="Hospital:" />-->
                                     <h:selectOneMenu value="#{receptorMB.receptor.codigoHospital}" converter="converterHospital" styleClass="form-control input-lg">
                                         <f:selectItems value="#{receptorMB.hospitais}" var="h" itemLabel="#{h.nomeHospital}" itemValue="#{h}"/>
                                     </h:selectOneMenu><br/>
@@ -50,23 +50,23 @@
                                         <f:selectItem itemValue = "O Negativo" itemLabel = "(O-) - O Negativo" />
                                     </h:selectOneMenu>
                                 </div>
-                    
-                
-                </div>
-                
-            </h:panelGroup><br/>
-            <div class="form-group">
-                            <div class="col-xs-12 col-md-6">
-            <h:commandButton value="Salvar" action="#{receptorMB.salvar()}" class="btn btn-success btn-block btn-lg" tabindex="7"/>
+
+
                             </div>
-            </div>
-            <h:commandButton value="Voltar" action="index"/>
-        </h:form>
-        
+
+                        </h:panelGroup><br/>
+                        <div class="form-group">
+                            <div class="col-xs-12 col-md-6">
+                                <h:commandButton value="Salvar" action="#{receptorMB.salvar()}" class="btn btn-success btn-block btn-lg" tabindex="7"/>
+                            </div>
+                        </div>
+                        <a href="../">Voltar</a>
+                    </h:form>
+
                 </div>
             </div>
-                </div>
-        
+        </div>
+
     </h:body>
 </html>
 

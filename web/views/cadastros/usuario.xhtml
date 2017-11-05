@@ -44,7 +44,7 @@
                                     <!--  <h:outputLabel id="lbFuncao" value="Função:" /> -->
                                     <h:selectOneMenu value="#{usuarioMB.usuario.codigoFuncao}" converter="converterFuncao" styleClass="form-control input-lg">
                                         <!--<f:selectItem itemValue="" itemLabel="Selecione uma função"/>-->
-                                        
+
                                         <f:selectItems value="#{usuarioMB.funcoes}" var="f" itemLabel="#{f.nomeFuncao}" itemValue="#{f}"/>
                                     </h:selectOneMenu>
                                 </div>
@@ -53,7 +53,7 @@
                                     <!--<h:outputLabel id="lbProfissao" value="Profissão:" />-->
                                     <h:selectOneMenu value="#{usuarioMB.usuario.codigoProfissao}" converter="converterProfissao" styleClass="form-control input-lg" >
                                         <!--<f:selectItem itemValue="" itemLabel="Selecione uma profissão"/>-->
-                                        <f:selectItem noSelectionOption="Selecione uma profissão"/>
+
                                         <f:selectItems value="#{usuarioMB.profissoes}" var="p" itemLabel="#{p.nomeProfissao}" itemValue="#{p}"/>
                                     </h:selectOneMenu>
                                 </div>
@@ -73,13 +73,13 @@
                                 <h:commandButton value="Salvar" action="#{usuarioMB.salvar()}" class="btn btn-success btn-block btn-lg" tabindex="7"/>
                             </div>
                         </div>
-                        <h:commandButton value="Voltar" action="index"/>
+                        <a href="../">Voltar</a>
                     </h:form>
 
                 </div>
             </div>
         </div>
-        
+
     </h:body>
 </html>
 
