@@ -9,8 +9,8 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
 import modelo.Doador;
 import modelo.Pretriagem;
 import modelo.Usuario;
@@ -21,7 +21,7 @@ import persistencia.DAO;
  * @author henrique
  */
 @Named(value = "pretriagemMB")
-@ViewScoped
+@RequestScoped
 public class PretriagemMB implements Serializable{
 
     Pretriagem pretriagem;
@@ -111,6 +111,14 @@ public class PretriagemMB implements Serializable{
     public void setDoadores(List<Doador> doadores) {
         this.doadores = doadores;
     }
+
+    public Doador getDoador() {
+        return doador;
+    }
+
+    public void setDoador(Doador doador) {
+        this.doador = doador;
+    }
     
     
     
@@ -149,7 +157,7 @@ public class PretriagemMB implements Serializable{
     
     public String teste(Doador doador){
         this.doador = doador;
-        return "doador";
+        return "pretriagem";
     }
     
 }

@@ -12,22 +12,24 @@
         <h:outputScript target="body" library="js" name="bootstrap.min.js"/>
 
 
-        <link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="../../resources/css/custom.css"/>
-        <script type="text/javascript" src="../../resources/js/bootstrap.min.js"/>
-        
         <!--Import Google Icon Font-->
-        <link type="text/css" href="../../resources/css/icons.css" rel="stylesheet"/>
+        <h:outputStylesheet library="css" name="icons.css"/>
+
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="../../resources/css/style.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="../../resources/css/prism.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="../../resources/css/materialize-stepper.min.css"  media="screen,projection"/>
+        <h:outputStylesheet library="css" name="materialize.min.css" />
+        <h:outputStylesheet library="css" name="style.css" />
+        <h:outputStylesheet library="css" name="prism.css" />
+        <h:outputStylesheet library="css" name="materialize-stepper.min.css" />
+
+
+
 
     </h:head>
     <h:body>
-        <script type="text/javascript" src="../../resources/jquery/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="../../resources/js/materialize.min.js"></script>
+        <h:outputScript library="jquery" name="jquery-3.2.1.min.js"/>
+        <h:outputScript library="js" name="materialize.min.js" />
+
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
@@ -42,7 +44,7 @@
                         <h:panelGroup id="painelIdentificacao" >
 
                             <div class="row">
-                                
+
                                 <div class="col-xs-12 col-sm-12 col-md-12">
 
                                     <h:inputText id="edNomeDoador" value="#{doadorMB.doador.nomeDoador}" a:placeholder="Nome completo" styleClass="form-control input-lg"/>
@@ -286,6 +288,7 @@
                     <hr class="colorgraph"/>
 
                     <!-- -->
+                     <h:form>
                     <ul class="stepper linear col-xs-12 col-sm-12 col-md-12">
                         <li class="step active" >
                             <div class="step-title waves-effect waves-dark">
@@ -293,13 +296,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta1" value = "#" > 
+                                    <h:selectOneRadio id="pergunta1" value = "#{triagemMB.triagem.pergunta1}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -312,13 +315,12 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
-
-                                        <h:selectOneRadio id="pergunta2" value = "#" > 
+                                    <!--<h:form>-->
+                                    <h:selectOneRadio id="pergunta2" value = "#{triagemMB.triagem.pergunta2}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -332,13 +334,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta3" value = "#" > 
+                                    <h:selectOneRadio id="pergunta3" value = "#{triagemMB.triagem.pergunta3}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -352,13 +354,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta4" value = "#" > 
+                                    <h:selectOneRadio id="pergunta4" value = "#{triagemMB.triagem.pergunta4}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -372,13 +374,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta5" value = "#" > 
+                                    <h:selectOneRadio id="pergunta5" value = "#{triagemMB.triagem.pergunta5}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -392,13 +394,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta6" value = "#" > 
+                                    <h:selectOneRadio id="pergunta6" value = "#{triagemMB.triagem.pergunta6}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                   <!-- </h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -412,13 +414,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta7" value = "#" > 
+                                    <h:selectOneRadio id="pergunta7" value = "#{triagemMB.triagem.pergunta7}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -432,13 +434,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta8" value = "#" > 
+                                    <h:selectOneRadio id="pergunta8" value = "#{triagemMB.triagem.pergunta8}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -452,13 +454,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta9" value = "#" > 
+                                    <h:selectOneRadio id="pergunta9" value = "#{triagemMB.triagem.pergunta9}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -472,13 +474,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta10" value = "#" > 
+                                    <h:selectOneRadio id="pergunta10" value = "#{triagemMB.triagem.pergunta10}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -492,13 +494,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta11" value = "#" > 
+                                    <h:selectOneRadio id="pergunta11" value = "#{triagemMB.triagem.pergunta11}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -512,13 +514,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta12" value = "#" > 
+                                    <h:selectOneRadio id="pergunta12" value = "#{triagemMB.triagem.pergunta12}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -532,13 +534,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta13" value = "#" > 
+                                    <h:selectOneRadio id="pergunta13" value = "#{triagemMB.triagem.pergunta13}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -552,13 +554,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta14" value = "#" > 
+                                    <h:selectOneRadio id="pergunta14" value = "#{triagemMB.triagem.pergunta14}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -572,13 +574,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta15" value = "#" > 
+                                    <h:selectOneRadio id="pergunta15" value = "#{triagemMB.triagem.pergunta15}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -592,13 +594,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta16" value = "#" > 
+                                    <h:selectOneRadio id="pergunta16" value = "#{triagemMB.triagem.pergunta16}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -612,13 +614,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta17" value = "#" > 
+                                    <h:selectOneRadio id="pergunta17" value = "#{triagemMB.triagem.pergunta17}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -632,13 +634,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta18" value = "#" > 
+                                    <h:selectOneRadio id="pergunta18" value = "#{triagemMB.triagem.pergunta18}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -652,13 +654,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta19" value = "#" > 
+                                    <h:selectOneRadio id="pergunta19" value = "#{triagemMB.triagem.pergunta19}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -672,13 +674,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta20" value = "#" > 
+                                    <h:selectOneRadio id="pergunta20" value = "#{triagemMB.triagem.pergunta20}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -692,13 +694,12 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
-
-                                        <h:selectOneRadio id="pergunta21" value = "#" > 
+                                    <!--<h:form>-->
+                                    <h:selectOneRadio id="pergunta21" value = "#{triagemMB.triagem.pergunta21}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -712,13 +713,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta22" value = "#" > 
+                                    <h:selectOneRadio id="pergunta22" value = "#{triagemMB.triagem.pergunta22}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -733,13 +734,13 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta23" value = "#" > 
+                                    <h:selectOneRadio id="pergunta23" value = "#{triagemMB.triagem.pergunta23}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
                                 <div class="step-actions">
                                     <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
@@ -753,30 +754,56 @@
                             </div>
                             <div class="step-content">
                                 <div class="rows">
-                                    <h:form>
+                                    <!--<h:form>-->
 
-                                        <h:selectOneRadio id="pergunta24" value = "#" > 
+                                    <h:selectOneRadio id="pergunta24" value = "#{triagemMB.triagem.pergunta24}" > 
                                             <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
                                             <f:selectItem itemValue = "False" itemLabel = "NÃO" />
                                         </h:selectOneRadio>
-                                    </h:form>
+                                    <!--</h:form>-->
                                 </div>
-
                                 <div class="step-actions">
-                                    <h:form>
-                                        <h:commandButton value="Salvar" action="#" class="waves-effect waves-dark btn blue"/>
-                                    </h:form>
+                                    <button class="waves-effect waves-dark btn blue next-step">Próxima</button>
+                                    <button class="waves-effect waves-dark btn-flat previous-step">Voltar</button>
                                 </div>
                             </div>
                         </li>
-                    </ul>  
-                    <!-- -->
+                        <li class="step">
+                            <div class="step-title waves-effect waves-dark">
+                                Apto a coleta:
+                            </div>
+                            <div class="step-content">
+                                <div class="rows">
+                                    <!--<h:form>-->
 
+                                        <h:selectOneRadio id="habilitadoDoação" value = "#{triagemMB.triagem.habilitadoDoacao}" > 
+                                            <f:selectItem itemValue = "True" itemLabel = "Sim" /> 
+                                            <f:selectItem itemValue = "False" itemLabel = "Não" />
+                                        </h:selectOneRadio>
+                                    
+                                    <!--</h:form>-->
+                                </div>
+                                
+                                
+
+                                <div class="step-actions">
+                                    <!--<h:form>-->
+                                        <h:commandButton value="Salvar" action="#{triagemMB.salvar()}" class="waves-effect waves-dark btn blue"/>
+                                    <!--</h:form>-->
+                                </div>
+                                
+                      
+                            </div>
+                        </li>
+                    </ul> 
+                     </h:form>
+                    <!-- -->
+                    <a href="../">Voltar</a>
                 </div>
             </div>
         </div>
-        
-        
+
+
         <script>
             function someFunction() {
                 setTimeout(function () {
@@ -790,11 +817,11 @@
             });
         </script>
 
-        <script src="../../resources/js/prism.js"></script>
-        <script src="../../resources/js/materialize-stepper.min.js"></script>
-        
-        <a href="../../../">Voltar</a>
 
+
+
+        <h:outputScript library="js" name="prism.js"/>
+        <h:outputScript library="js" name="materialize-stepper.min.js"/>
     </h:body>
 </html>
 

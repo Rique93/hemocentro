@@ -123,5 +123,9 @@ public class Receptor implements Serializable {
     public String toString() {
         return "modelo.Receptor[ idReceptor=" + idReceptor + " ]";
     }
+    
+    public String getIdConverter() {
+        return String.valueOf(idReceptor);
+    }
 
 }
