@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body> 
+        <form action='#'>
+            <select id='combo' name='combo'>
+                <option value='algumacoisa'> Alguma coisa </option>
+                <option value='manchete'> Manchete </option>
+                <option value='outracoisa'> Outra coisa </option>
+            </select>
+        </form>
+
+        <div id="oi">
+            <a href='#'>Link</a>
+            <a href='#'>Link</a>
+        </div>
+
+
+
+
+
+        
+
+
+
+
+
+        <script>
+            alert("Eu sou um alert!");
+            var el = document.querySelector('body > #oi');
+
+            document.getElementById('combo').addEventListener('change', function () {
+                if (this.value === 'manchete') {
+                    el.style.visibility = 'visible';
+                } else {
+                    el.style.visibility = 'hidden';
+                }
+            });
+        </script>
+
+        
+    </h:body>
+</html>
+

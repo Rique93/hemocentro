@@ -49,7 +49,7 @@ public class Hospital implements Serializable {
     @Column(name = "cidade")
     private String cidade;
     @OneToMany(mappedBy = "codigoHospital")
-    private List<Receptor> receptorList;
+    private List<Doador> receptorList;
 
     public Hospital() {
     }
@@ -90,13 +90,15 @@ public class Hospital implements Serializable {
         this.cidade = cidade;
     }
 
-    public List<Receptor> getReceptorList() {
+    public List<Doador> getReceptorList() {
         return receptorList;
     }
 
-    public void setReceptorList(List<Receptor> receptorList) {
+    public void setReceptorList(List<Doador> receptorList) {
         this.receptorList = receptorList;
     }
+
+    
 
     @Override
     public int hashCode() {

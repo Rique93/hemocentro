@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +39,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Pretriagem.findByAltura", query = "SELECT p FROM Pretriagem p WHERE p.altura = :altura"),
     @NamedQuery(name = "Pretriagem.findByHemoglobina", query = "SELECT p FROM Pretriagem p WHERE p.hemoglobina = :hemoglobina"),
     @NamedQuery(name = "Pretriagem.findByHematocrito", query = "SELECT p FROM Pretriagem p WHERE p.hematocrito = :hematocrito"),
-    @NamedQuery(name = "Pretriagem.findByHabilitadoTriagem", query = "SELECT p FROM Pretriagem p WHERE p.habilitadoTriagem = :habilitadoTriagem")})
+    @NamedQuery(name = "Pretriagem.findByHabilitadoTriagem", query = "SELECT p FROM Pretriagem p WHERE p.habilitadoTriagem = :habilitado_triagem")})
 public class Pretriagem implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -69,6 +70,9 @@ public class Pretriagem implements Serializable {
     @JoinColumn(name = "usuario_pretriagem", referencedColumnName = "id_usuario")
     @ManyToOne
     private Usuario usuarioPretriagem;
+    @JoinColumn(name = "doador_pretriagem", referencedColumnName = "id_doador")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Doador doadorPretriagem;
     @OneToMany(mappedBy = "pretriagem")
     private List<Doacao> doacaoList;
 
@@ -166,6 +170,16 @@ public class Pretriagem implements Serializable {
     public void setUsuarioPretriagem(Usuario usuarioPretriagem) {
         this.usuarioPretriagem = usuarioPretriagem;
     }
+
+    public Doador getDoadorPretriagem() {
+        return doadorPretriagem;
+    }
+
+    public void setDoadorPretriagem(Doador doadorPretriagem) {
+        this.doadorPretriagem = doadorPretriagem;
+    }
+    
+    
 
     public List<Doacao> getDoacaoList() {
         return doacaoList;

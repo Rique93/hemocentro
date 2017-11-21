@@ -13,7 +13,7 @@ import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 import modelo.Funcao;
 import modelo.Profissao;
-import modelo.Usuario;
+import modelo.Usuario; 
 import persistencia.DAO;
 
 /**
@@ -115,5 +115,5 @@ public class UsuarioMB implements Serializable{
     
     public void listar(){
         lista = usuarioDAO.getAll(Usuario.class, "Usuario.findAll");
-    }
+    } 
 }

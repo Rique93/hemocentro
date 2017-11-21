@@ -12,6 +12,8 @@
 
         <h:outputStylesheet library="css" name="bootstrap.css"/>
         <h:outputStylesheet library="css" name="custom.css"/>
+      
+        
         <h:outputScript target="body" library="js" name="bootstrap.min.js"/>
     </h:head>
     <h:body>
@@ -44,7 +46,69 @@
                             </div>
                         </div>
                         <a href="../">Voltar</a>
-                    </h:form>
+                    </h:form><br /><br />
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                        <h3>Funções cadastradas:</h3>
+                    <hr class="colorgraph"/>
+                        
+                                <h:form >
+                                    
+                                    <h:dataTable var="funcao" value="#{funcaoMB.lista}" class="col-xs-12 col-sm-12 col-md-12">
+                                        
+
+                                        <h:column>
+
+                                            <f:facet name="header">Função</f:facet>
+                                                #{funcao.nomeFuncao}
+
+                                        </h:column>
+
+                                        <h:column>
+                                            
+                                            
+                                            <div class="btn-group" role="group">
+                                                
+                                                <h:commandButton value="Editar" class="btn btn-primary btn-outline btn-sm" action="#{funcaoMB.editar(funcao)}"/>
+                                                <h:commandButton value="Excluir" class="btn btn-primary btn-outline btn-sm" action="#{funcaoMB.excluir(funcao)}"/>
+                                            </div>
+                                        </h:column>
+                                        
+                                    </h:dataTable>
+                                    
+                                </h:form>
+
+
+
+
+
+
+
+
+
+                            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                 </div>
             </div>

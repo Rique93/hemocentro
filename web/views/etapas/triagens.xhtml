@@ -12,39 +12,40 @@
     <h:body>
         
                 
-        <h3>Candidatos pré-triagem</h3>   
+        <h3>Candidatos triagem</h3>                        
                     
         <h:form id="frm" role="form" >
-            <h:dataTable var="doadores" value="#{pretriagemMB.doadores}">
+            <h:dataTable var="pretriagens" value="#{triagemMB.pretriagens}">
                 
                 <h:column >
                     
                     <f:facet name="header" >Nome</f:facet>
-                    #{doadores.nomeDoador}
+                    #{pretriagens.doadorPretriagem.nomeDoador}
                     
                 </h:column>
                 
                 <h:column >
                     
                     <f:facet name="header" >Tipo Sanguíneo</f:facet>
-                    #{doadores.tipoSanguineo}
+                    #{pretriagens.doadorPretriagem.tipoSanguineo}
                     
                 </h:column>
                 
                 <h:column>
                     
                     <f:facet name="header">Email</f:facet>
-                    #{doadores.email}
+                    #{pretriagens.doadorPretriagem.email}
                    
                 </h:column>
                 
                 <h:column>
-                    <h:commandLink value="Ir pré-triagem" action="#{pretriagemMB.teste(doadores)}"/>
+                    <h:commandLink value="Ir triagem" action="#{triagemMB.teste(pretriagens)}"/>
                 </h:column>
             </h:dataTable>
             
         </h:form>
-        <a href="../../hemocentro">Voltar</a>              
+               
+        <a href="../../hemocentro">Voltar</a>   
             
     </h:body>
 </html>

@@ -9,8 +9,9 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
+import modelo.Pretriagem;
 import modelo.Triagem;
 import modelo.Usuario;
 import persistencia.DAO;
@@ -20,7 +21,7 @@ import persistencia.DAO;
  * @author henrique
  */
 @Named(value = "triagemMB")
-@ViewScoped
+@RequestScoped
 public class TriagemMB implements Serializable{
 
     Triagem triagem;
@@ -30,20 +31,38 @@ public class TriagemMB implements Serializable{
     DAO<Usuario> usuarioDAO;
     List<Usuario> usuarios;
     
+    /*
+    
+    */
+    DAO<Pretriagem> pretriagemDAO;
+    List<Pretriagem> pretriagens;
+    
+    Pretriagem pretriagem;
+    
     
     public TriagemMB() {
     }
-    
     
     @PostConstruct
     public void inicializar(){
         triagemDAO = new DAO<>("hemocentroPU");
         usuarioDAO = new DAO<>("hemocentroPU");
         
+        /*
+        
+        */
+        pretriagemDAO = new DAO<>("hemocentroPU");
+        
         
         triagem = new Triagem();
-        
+        pretriagem = new Pretriagem();
         usuarios = usuarioDAO.getAll(Usuario.class, "Usuario.findAll");
+        
+        /*
+        
+        */
+        //pretriagens = pretriagemDAO.getAll(Pretriagem.class, "Pretriagem.findAll");
+        pretriagens = pretriagemDAO.getPretriagensHabilitadas(Pretriagem.class, true, "Pretriagem.findByHabilitadoTriagem");
         
         this.listar();
     }
@@ -79,6 +98,28 @@ public class TriagemMB implements Serializable{
         this.usuarios = usuarios;
     }
     
+    /*
+    
+    */
+
+    public List<Pretriagem> getPretriagens() {
+        return pretriagens;
+    }
+
+    public void setPretriagens(List<Pretriagem> pretriagens) {
+        this.pretriagens = pretriagens;
+    }
+
+    public Pretriagem getPretriagem() {
+        return pretriagem;
+    }
+
+    public void setPretriagem(Pretriagem pretriagem) {
+        this.pretriagem = pretriagem;
+    }
+    
+    
+    
     
     
     
@@ -110,4 +151,12 @@ public class TriagemMB implements Serializable{
     }
     
     
+    /*
+    
+    */
+    
+    public String teste(Pretriagem pretriagem){
+        this.pretriagem = pretriagem;
+        return "triagem";
+    }
 }

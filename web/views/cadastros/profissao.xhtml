@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Cadastro de profissões:</title>
 
@@ -40,7 +41,41 @@
                             </div>
                         </div>
                         <a href="../">Voltar</a>
-                    </h:form>
+                    </h:form><br /><br />
+                    
+                    
+                    
+                    <h3>Profissões cadastradas:</h3>
+                    <hr class="colorgraph"/>
+                        
+                                <h:form >
+                                    
+                                    <h:dataTable var="profissao" value="#{profissaoMB.lista}" class="col-xs-12 col-sm-12 col-md-12">
+                                                               
+
+                                        <h:column>
+
+                                            <f:facet name="header">Profissão</f:facet>
+                                                #{profissao.nomeProfissao}
+
+                                        </h:column>
+
+                                        <h:column>
+                                            
+                                            
+                                            <div class="btn-group" role="group">
+                                                
+                                                <h:commandButton value="Editar" class="btn btn-primary btn-outline btn-sm" action="#{profissaoMB.editar(profissao)}"/>
+                                                <h:commandButton value="Excluir" class="btn btn-primary btn-outline btn-sm" action="#{profissaoMB.excluir(profissao)}"/>
+                                            </div>
+                                        </h:column>
+                                        
+                                    </h:dataTable>
+                                    
+                                </h:form>
+                    
+                    
+                    
 
                 </div>
             </div>

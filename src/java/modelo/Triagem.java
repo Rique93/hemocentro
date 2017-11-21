@@ -29,7 +29,7 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(name = "Triagem.findAll", query = "SELECT t FROM Triagem t"),
     @NamedQuery(name = "Triagem.findByIdTriagem", query = "SELECT t FROM Triagem t WHERE t.idTriagem = :idTriagem"),
-    @NamedQuery(name = "Triagem.findByHabilitadoDoacao", query = "SELECT t FROM Triagem t WHERE t.habilitadoDoacao = :habilitadoDoacao")})
+    @NamedQuery(name = "Triagem.findByHabilitadoDoacao", query = "SELECT t FROM Triagem t WHERE t.habilitadoDoacao = :habilitado_doacao")})
 public class Triagem implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,6 +40,9 @@ public class Triagem implements Serializable {
     private Integer idTriagem;
     @Column(name = "habilitado_doacao")
     private Boolean habilitadoDoacao;
+    @JoinColumn(name = "pretriagem_triagem", referencedColumnName = "id_pretriagem")
+    @ManyToOne
+    private Pretriagem pretriagemTriagem;
     
     
     
@@ -162,6 +165,21 @@ public class Triagem implements Serializable {
     public void setUsuarioTriagem(Usuario usuarioTriagem) {
         this.usuarioTriagem = usuarioTriagem;
     }
+
+    public Pretriagem getPretriagemTriagem() {
+        return pretriagemTriagem;
+    }
+
+    public void setPretriagemTriagem(Pretriagem pretriagemTriagem) {
+        this.pretriagemTriagem = pretriagemTriagem;
+    }
+
+ 
+    
+    
+    
+    
+    
 
     @Override
     public int hashCode() {

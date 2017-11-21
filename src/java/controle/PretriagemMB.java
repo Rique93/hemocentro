@@ -22,56 +22,51 @@ import persistencia.DAO;
  */
 @Named(value = "pretriagemMB")
 @RequestScoped
-public class PretriagemMB implements Serializable{
+public class PretriagemMB implements Serializable {
 
     Pretriagem pretriagem;
     DAO<Pretriagem> pretriagemDAO;
     List<Pretriagem> lista;
-    
+
     DAO<Usuario> usuarioDAO;
     List<Usuario> usuarios;
-    
-    
+
     /*
     
-    */
+     */
     DAO<Doador> doadorDAO;
     List<Doador> doadores;
-    
+
     Doador doador;
-    
-    
+
     public PretriagemMB() {
     }
-    
+
     @PostConstruct
-    public void inicializar(){
+    public void inicializar() {
         pretriagemDAO = new DAO<>("hemocentroPU");
         usuarioDAO = new DAO<>("hemocentroPU");
-        
+
         /*
         
-        */
+         */
         doadorDAO = new DAO<>("hemocentroPU");
-        
-        
+
         pretriagem = new Pretriagem();
         doador = new Doador();
-        
+
         usuarios = usuarioDAO.getAll(Usuario.class, "Usuario.findAll");
-        
-        
+
         /*
         
-        */
+         */
         doadores = doadorDAO.getAll(Doador.class, "Doador.findAll");
-        
-        
+
         this.listar();
     }
-    
+
     @PreDestroy
-    public void fechar(){
+    public void fechar() {
         pretriagemDAO.close();
         usuarioDAO.close();
     }
@@ -99,11 +94,10 @@ public class PretriagemMB implements Serializable{
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-    
+
     /*
     
-    */
-
+     */
     public List<Doador> getDoadores() {
         return doadores;
     }
@@ -119,45 +113,51 @@ public class PretriagemMB implements Serializable{
     public void setDoador(Doador doador) {
         this.doador = doador;
     }
-    
-    
-    
-    
-    public void novo(){
+
+    public void novo() {
         pretriagem = new Pretriagem();
     }
-    
-    public void salvar(){
-        if(pretriagem.getIdPretriagem() == null)
+
+//    public String salvar() {
+//        if (pretriagem.getIdPretriagem() == null) {
+//               pretriagem.setDoadorPretriagem(doador);
+//               pretriagemDAO.insert(pretriagem);
+//        }
+//        else
+//            pretriagemDAO.update(pretriagem);
+//        return "pretriagens";
+//    }
+
+    public void salvar() {
+        if (pretriagem.getIdPretriagem() == null) {
             pretriagemDAO.insert(pretriagem);
-        else
+        } else {
             pretriagemDAO.update(pretriagem);
+        }
         this.listar();
         this.novo();
     }
-    
-    public void editar(Pretriagem pretriagem){
+
+    public void editar(Pretriagem pretriagem) {
         this.pretriagem = pretriagem;
     }
-    
-    public void excluir(Pretriagem pretriagem){
+
+    public void excluir(Pretriagem pretriagem) {
         pretriagemDAO.delete(pretriagem);
         this.listar();
         this.novo();
     }
-    
-    public void listar(){
+
+    public void listar() {
         lista = pretriagemDAO.getAll(Pretriagem.class, "Pretriagem.findAll");
     }
-    
-    
+
     /*
     
-    */
-    
-    public String teste(Doador doador){
+     */
+    public String teste(Doador doador) {
         this.doador = doador;
         return "pretriagem";
     }
-    
+
 }

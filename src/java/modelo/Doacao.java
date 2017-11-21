@@ -59,9 +59,9 @@ public class Doacao implements Serializable {
     @JoinColumn(name = "pretriagem", referencedColumnName = "id_pretriagem")
     @ManyToOne
     private Pretriagem pretriagem;
-    @JoinColumn(name = "receptor", referencedColumnName = "id_receptor")
+    @JoinColumn(name = "receptor", referencedColumnName = "id_doador")
     @ManyToOne
-    private Receptor receptor;
+    private Doador receptor;
     @JoinColumn(name = "triagem", referencedColumnName = "id_triagem")
     @ManyToOne
     private Triagem triagem;
@@ -132,13 +132,15 @@ public class Doacao implements Serializable {
         this.pretriagem = pretriagem;
     }
 
-    public Receptor getReceptor() {
+    public Doador getReceptor() {
         return receptor;
     }
 
-    public void setReceptor(Receptor receptor) {
+    public void setReceptor(Doador receptor) {
         this.receptor = receptor;
     }
+
+    
 
     public Triagem getTriagem() {
         return triagem;

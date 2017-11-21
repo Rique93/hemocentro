@@ -74,7 +74,57 @@
                             </div>
                         </div>
                         <a href="../">Voltar</a>
-                    </h:form>
+                    </h:form><br /><br />
+                    
+                    
+                    
+                    
+                    <h3>Usuários cadastrados:</h3>
+                    <hr class="colorgraph"/>
+                        
+                                <h:form >
+                                    
+                                    <h:dataTable var="usuario" value="#{usuarioMB.lista}" class="col-xs-12 col-sm-12 col-md-12">
+                                        
+                                        <h:column>
+
+                                            <f:facet name="header">Nome</f:facet>
+                                                #{usuario.nomeUsuario}
+
+                                        </h:column>
+                                        
+                                        <h:column>
+
+                                            <f:facet name="header">Profissão</f:facet>
+                                            
+                                                #{usuario.codigoProfissao.nomeProfissao}
+
+                                        </h:column>
+                                        
+                                        <h:column>
+
+                                            <f:facet name="header">Função</f:facet>
+                                            
+                                                #{usuario.codigoFuncao.nomeFuncao}
+
+                                        </h:column>
+
+                                        <h:column>
+                                            
+                                            
+                                            <div class="btn-group" role="group">
+                                                
+                                                <h:commandButton value="Editar" class="btn btn-primary btn-outline btn-sm" action="#{usuarioMB.editar(usuario)}"/>
+                                                <h:commandButton value="Excluir" class="btn btn-primary btn-outline btn-sm" action="#{usuarioMB.excluir(usuario)}"/>
+                                            </div>
+                                        </h:column>
+                                        
+                                    </h:dataTable>
+                                    
+                                </h:form>
+                    
+                    
+                    
 
                 </div>
             </div>

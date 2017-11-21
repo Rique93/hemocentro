@@ -118,6 +118,9 @@ public class Doador implements Serializable {
     @Size(max = 12)
     @Column(name = "tipo_sanguineo")
     private String tipoSanguineo;
+    @Size(max = 18)
+    @Column(name = "tipo")
+    private String tipo;
     @Size(max = 40)
     @Column(name = "escolaridade")
     private String escolaridade;
@@ -126,6 +129,9 @@ public class Doador implements Serializable {
     @JoinColumn(name = "usuario_identificacao", referencedColumnName = "id_usuario")
     @ManyToOne
     private Usuario usuarioIdentificacao;
+    @JoinColumn(name = "codigo_hospital", referencedColumnName = "id_hospital")
+    @ManyToOne
+    private Hospital codigoHospital;
 
     public Doador() {
     }
@@ -318,6 +324,23 @@ public class Doador implements Serializable {
         this.usuarioIdentificacao = usuarioIdentificacao;
     }
 
+    public Hospital getCodigoHospital() {
+        return codigoHospital;
+    }
+
+    public void setCodigoHospital(Hospital codigoHospital) {
+        this.codigoHospital = codigoHospital;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -343,4 +366,7 @@ public class Doador implements Serializable {
         return "modelo.Doador[ idDoador=" + idDoador + " ]";
     }
 
+    public String getIdConverter() {
+        return String.valueOf(idDoador);
+    }
 }

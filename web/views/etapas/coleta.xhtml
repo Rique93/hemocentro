@@ -42,22 +42,22 @@
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
 
-                                    <h:inputText id="edNomeDoador" value="#{doadorMB.doador.nomeDoador}" a:placeholder="Nome completo" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edNomeDoador" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.nomeDoador}" a:placeholder="Nome completo" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-6">
 
                                     <!--<h:outputLabel id="lbSexo" value="Sexo:"/>-->
-                                    <h:selectOneMenu value = "#{doadorMB.doador.sexo}" styleClass="form-control input-lg"> 
-                                        <f:selectItem itemValue = "Feminino" itemLabel = "Feminino" /> 
-                                        <f:selectItem itemValue = "Masculino" itemLabel = "Masculino" />
+                                    <h:selectOneMenu readonly="true" value = "#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.sexo}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Feminino" itemLabel = "Feminino" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Masculino" itemLabel = "Masculino" />
                                     </h:selectOneMenu>
 
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <h:inputText id="edDataNascimento" value="#{doadorMB.doador.dataNascimento}" a:placeholder="Data de nascimento" styleClass="form-control input-lg">
+                                    <h:inputText id="edDataNascimento" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.dataNascimento}" a:placeholder="Data de nascimento" styleClass="form-control input-lg">
                                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-3:00"/>
                                     </h:inputText>
                                     <br/>
@@ -66,131 +66,147 @@
 
 
                                 <div class="col-xs-12 col-sm-3 col-md-3">
-                                    <h:inputText id="edNumeroDocumento" value="#{doadorMB.doador.numeroDocumento}" a:placeholder="Nº documento" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edNumeroDocumento" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.numeroDocumento}" a:placeholder="Nº documento" styleClass="form-control input-lg"/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-9 col-md-9">
                                     <!--<h:outputLabel id="lbOrgaoExpeditor" value="Órgão Expeditor:" />-->
-                                    <h:selectOneMenu value = "#{doadorMB.doador.orgaoExpeditor}" styleClass="form-control input-lg"> 
-                                        <f:selectItem itemValue = "Secretária de Segurança Pública" itemLabel = "SSP - Secretária de Segurança Pública" /> 
-                                        <f:selectItem itemValue = "Secretaria da Justiça e Segurança" itemLabel = "SJS - Secretaria da Justiça e Segurança" />
-                                        <f:selectItem itemValue = "Ministério do Trabalho e Emprego" itemLabel = "MTE - Ministério do Trabalho e Emprego" />
-                                        <f:selectItem itemValue = "Ministério do Exército" itemLabel = "ME - Ministério do Exército" />
-                                        <f:selectItem itemValue = "Secretaria da Justiça do Trabalho e Segurança" itemLabel = "SJTS - Secretaria da Justiça do Trabalho e Segurança" />
-                                        <f:selectItem itemValue = "Ministério da Aeronáutica" itemLabel = "MA - Ministério da Aeronáutica" />
-                                        <f:selectItem itemValue = "Ministério da Marinha" itemLabel = "MM - Ministério da Marinha" />
-                                        <f:selectItem itemValue = "Conselho Regional (CREA/CRM/CRA/CBM/CRO/CRF)" itemLabel = "Conselho Regional (CREA/CRM/CRA/CBM/CRO/CRF)" />
-                                        <f:selectItem itemValue = "Ordem dos Advogados do Brasil" itemLabel = "OAB - Ordem dos Advogados do Brasil" />
-                                        <f:selectItem itemValue = "Outro" itemLabel = "Outro" />
+                                    <h:selectOneMenu readonly="true" value = "#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.orgaoExpeditor}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Secretária de Segurança Pública" itemLabel = "SSP - Secretária de Segurança Pública" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Secretaria da Justiça e Segurança" itemLabel = "SJS - Secretaria da Justiça e Segurança" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ministério do Trabalho e Emprego" itemLabel = "MTE - Ministério do Trabalho e Emprego" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ministério do Exército" itemLabel = "ME - Ministério do Exército" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Secretaria da Justiça do Trabalho e Segurança" itemLabel = "SJTS - Secretaria da Justiça do Trabalho e Segurança" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ministério da Aeronáutica" itemLabel = "MA - Ministério da Aeronáutica" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ministério da Marinha" itemLabel = "MM - Ministério da Marinha" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Conselho Regional (CREA/CRM/CRA/CBM/CRO/CRF)" itemLabel = "Conselho Regional (CREA/CRM/CRA/CBM/CRO/CRF)" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ordem dos Advogados do Brasil" itemLabel = "OAB - Ordem dos Advogados do Brasil" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Outro" itemLabel = "Outro" />
                                     </h:selectOneMenu>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <!--<h:outputLabel id="lbTipoDocumento" value="Documento:" />-->
-                                    <h:selectOneMenu value = "#{doadorMB.doador.tipoDocumento}" styleClass="form-control input-lg"> 
-                                        <f:selectItem itemValue = "Carteira de Identidade" itemLabel = "Carteira de Identidade" /> 
-                                        <f:selectItem itemValue = "Carteira de Trabalho" itemLabel = "Carteira de Trabalho" />
-                                        <f:selectItem itemValue = "Carteira Nacional de Habilitação" itemLabel = "CNH - Carteira Nacional de Habilitação" />
-                                        <f:selectItem itemValue = "Carteira de Identidade Profissional" itemLabel = "Carteira de Identidade Profissional" />
-                                        <f:selectItem itemValue = "Certificado de Reservista" itemLabel = "Certificado de Reservista" />
-                                        <f:selectItem itemValue = "Certificado de Dispensa de Incorporação" itemLabel = "Certificado de Dispensa de Incorporação" />
-                                        <f:selectItem itemValue = "Passaporte" itemLabel = "Passaporte" />
-                                        <f:selectItem itemValue = "Outro" itemLabel = "Outro" />
+                                    <h:selectOneMenu readonly="true" value = "#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.tipoDocumento}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Carteira de Identidade" itemLabel = "Carteira de Identidade" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Carteira de Trabalho" itemLabel = "Carteira de Trabalho" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Carteira Nacional de Habilitação" itemLabel = "CNH - Carteira Nacional de Habilitação" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Carteira de Identidade Profissional" itemLabel = "Carteira de Identidade Profissional" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Certificado de Reservista" itemLabel = "Certificado de Reservista" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Certificado de Dispensa de Incorporação" itemLabel = "Certificado de Dispensa de Incorporação" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Passaporte" itemLabel = "Passaporte" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Outro" itemLabel = "Outro" />
                                     </h:selectOneMenu>
                                 </div>
 
 
                                 <div class="col-xs-12 col-sm-3 col-md-3">
-                                    <h:inputText id="edNacionalidade" value="#{doadorMB.doador.nacionalidade}" a:placeholder="Nacionalidade" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edNacionalidade" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.nacionalidade}" a:placeholder="Nacionalidade" styleClass="form-control input-lg"/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-3 col-md-3">
-                                    <h:inputText id="edNaturalidade" value="#{doadorMB.doador.naturalidade}" a:placeholder="Naturalidade" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edNaturalidade" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.naturalidade}" a:placeholder="Naturalidade" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <h:inputText id="edFiliacaoMaterna" value="#{doadorMB.doador.filiacaoMaterna}" a:placeholder="Nome completo da mãe" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edFiliacaoMaterna" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.filiacaoMaterna}" a:placeholder="Nome completo da mãe" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <h:inputText id="edFiliacaoPaterna" value="#{doadorMB.doador.filiacaoPaterna}" a:placeholder="Nome completo do pai" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edFiliacaoPaterna" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.filiacaoPaterna}" a:placeholder="Nome completo do pai" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <h:inputText id="edOcupacaoHabitual" value="#{doadorMB.doador.ocupacaoHabitual}" a:placeholder="Ocupação" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edOcupacaoHabitual" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.ocupacaoHabitual}" a:placeholder="Ocupação" styleClass="form-control input-lg"/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <!--<h:outputLabel id="lbEscolaridade" value="Escolaridade:" />-->
-                                    <h:selectOneMenu value="#{doadorMB.doador.escolaridade}" styleClass="form-control input-lg"> 
-                                        <f:selectItem itemValue = "Analfabeto" itemLabel = "Analfabeto" /> 
-                                        <f:selectItem itemValue = "Ensino Fundamental Incompleto" itemLabel = "Ensino Fundamental Incompleto" />
-                                        <f:selectItem itemValue = "Ensino Fundamental Completo" itemLabel = "Ensino Fundamental Completo" />
-                                        <f:selectItem itemValue = "Ensino Médio Incompleto" itemLabel = "Ensino Médio Incompleto" />
-                                        <f:selectItem itemValue = "Ensino Médio Completo" itemLabel = "Ensino Médio Completo" />
-                                        <f:selectItem itemValue = "Ensino Superior Incompleto" itemLabel = "Ensino Superior Incompleto" />
-                                        <f:selectItem itemValue = "Ensino Superior Completo" itemLabel = "Ensino Superior Completo" />                                        
-                                        <f:selectItem itemValue = "Outro" itemLabel = "Outro" />
+                                    <h:selectOneMenu readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.escolaridade}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Analfabeto" itemLabel = "Analfabeto" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Ensino Fundamental Incompleto" itemLabel = "Ensino Fundamental Incompleto" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ensino Fundamental Completo" itemLabel = "Ensino Fundamental Completo" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ensino Médio Incompleto" itemLabel = "Ensino Médio Incompleto" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ensino Médio Completo" itemLabel = "Ensino Médio Completo" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ensino Superior Incompleto" itemLabel = "Ensino Superior Incompleto" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Ensino Superior Completo" itemLabel = "Ensino Superior Completo" />                                        
+                                        <f:selectItem itemDisabled="true" itemValue = "Outro" itemLabel = "Outro" />
                                     </h:selectOneMenu>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-4 col-md-4">
 
-                                    <h:inputText id="edCEP" value="#{doadorMB.doador.cep}" a:placeholder="CEP" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edCEP" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.cep}" a:placeholder="CEP" styleClass="form-control input-lg"/>
 
                                 </div>
 
                                 <div class="col-xs-12 col-sm-8 col-md-8">
 
-                                    <h:inputText id="edLogradouro" value="#{doadorMB.doador.logradouro}" a:placeholder="Rua" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edLogradouro" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.logradouro}" a:placeholder="Rua" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-2 col-md-2">
-                                    <h:inputText id="edNumeroResidencia" value="#{doadorMB.doador.numeroResidencia}" a:placeholder="Nº" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edNumeroResidencia" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.numeroResidencia}" a:placeholder="Nº" styleClass="form-control input-lg"/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-5 col-md-5">
-                                    <h:inputText id="edBairro" value="#{doadorMB.doador.bairro}" a:placeholder="Bairro" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edBairro" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.bairro}" a:placeholder="Bairro" styleClass="form-control input-lg"/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-5 col-md-5">
-                                    <h:inputText id="edCidade" value="#{doadorMB.doador.cidade}" a:placeholder="Cidade" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edCidade" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.cidade}" a:placeholder="Cidade" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-4 col-md-4">
-                                    <h:inputText id="edTelefone" value="#{doadorMB.doador.telefone}" a:placeholder="Nº contato" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edTelefone" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.telefone}" a:placeholder="Nº contato" styleClass="form-control input-lg"/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-8 col-md-8">
-                                    <h:inputText id="edEmail" value="#{doadorMB.doador.email}" a:placeholder="E-mail" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edEmail" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.email}" a:placeholder="E-mail" styleClass="form-control input-lg"/>
                                     <br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <!--<h:outputLabel id="lbTipoSanguineo" value="Tipo Sanguíneo:"/>-->
-                                    <h:selectOneMenu value = "#{doadorMB.doador.tipoSanguineo}" styleClass="form-control input-lg"> 
-                                        <f:selectItem itemValue = "A Positivo" itemLabel = "(A+) - A Positivo" /> 
-                                        <f:selectItem itemValue = "A Negativo" itemLabel = "(A-) - A Negativo" />
-                                        <f:selectItem itemValue = "B Positivo" itemLabel = "(B+) - B Positivo" /> 
-                                        <f:selectItem itemValue = "B Negativo" itemLabel = "(B-) - B Negativo" />
-                                        <f:selectItem itemValue = "AB Positivo" itemLabel = "(AB+) - AB Positivo" /> 
-                                        <f:selectItem itemValue = "AB Negativo" itemLabel = "(AB-) - AB Negativo" />
-                                        <f:selectItem itemValue = "O Positivo" itemLabel = "(O+) - O Positivo" /> 
-                                        <f:selectItem itemValue = "O Negativo" itemLabel = "(O-) - O Negativo" />
+                                    <h:selectOneMenu readonly="true" value = "#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.tipoSanguineo}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "A Positivo" itemLabel = "(A+) - A Positivo" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "A Negativo" itemLabel = "(A-) - A Negativo" />
+                                        <f:selectItem itemDisabled="true" itemValue = "B Positivo" itemLabel = "(B+) - B Positivo" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "B Negativo" itemLabel = "(B-) - B Negativo" />
+                                        <f:selectItem itemDisabled="true" itemValue = "AB Positivo" itemLabel = "(AB+) - AB Positivo" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "AB Negativo" itemLabel = "(AB-) - AB Negativo" />
+                                        <f:selectItem itemDisabled="true" itemValue = "O Positivo" itemLabel = "(O+) - O Positivo" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "O Negativo" itemLabel = "(O-) - O Negativo" />
+                                    </h:selectOneMenu><br />
+                                </div>
+                                
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <h:selectOneMenu readonly="true" value = "#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.tipo}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Doador" itemLabel = "Doador" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "Receptor" itemLabel = "Receptor" />
+                                        <f:selectItem itemDisabled="true" itemValue = "Doador e receptor" itemLabel = "Doador e receptor" /> 
                                     </h:selectOneMenu>
+                                    <br />
+                                </div>
+                                
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <!--<h:outputLabel id="lbHospital" value="Hospital:" />-->
+                                    <h:selectOneMenu readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.codigoHospital}" converter="converterHospital" styleClass="form-control input-lg">
+                                        <f:selectItems itemDisabled="true" value="#{doadorMB.hospitais}" var="h" itemLabel="#{h.nomeHospital}" itemValue="#{h}"/>
+                                    </h:selectOneMenu><br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-sm-6">
                                     <!--<h:outputLabel id="lbUsuarioIdentificacao" value="Usuário:" />-->
-                                    <h:selectOneMenu value="#{doadorMB.doador.usuarioIdentificacao}" converter="converterUsuario" styleClass="form-control input-lg">
-                                        <f:selectItems value="#{doadorMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
+                                    <h:selectOneMenu readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.doadorPretriagem.usuarioIdentificacao}" converter="converterUsuario" styleClass="form-control input-lg">
+                                        <f:selectItems itemDisabled="true" value="#{doacaoMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
                                     </h:selectOneMenu>
                                     <br/>
                                 </div>
@@ -217,50 +233,50 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4 col-md-4">
 
-                                    <h:inputText id="edPulso" value="#{pretriagemMB.pretriagem.pulso}" a:placeholder="Pulso (BPM)" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edPulso" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.pulso}" a:placeholder="Pulso (BPM)" styleClass="form-control input-lg"/>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-4">
-                                    <h:inputText id="edPressaoMinima" value="#{pretriagemMB.pretriagem.pressaoMi}" a:placeholder="Pressão Mín. (mmHg)" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edPressaoMinima" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.pressaoMi}" a:placeholder="Pressão Mín. (mmHg)" styleClass="form-control input-lg"/>
 
-                                </div>
-
-                                <div class="col-xs-12 col-sm-4 col-md-4">
-                                    <h:inputText id="edPressaoMaxima" value="#{pretriagemMB.pretriagem.pressaoMa}" a:placeholder="Pressão Máx. (mmHg)" styleClass="form-control input-lg"/><br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-4 col-md-4">
-
-                                    <h:inputText id="edTemperatura" value="#{pretriagemMB.pretriagem.temperatura}" a:placeholder="Temperatura (ºC)" styleClass="form-control input-lg"/>
+                                    <h:inputText id="edPressaoMaxima" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.pressaoMa}" a:placeholder="Pressão Máx. (mmHg)" styleClass="form-control input-lg"/><br/>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-4 col-md-4">
-                                    <h:inputText id="edPeso" value="#{pretriagemMB.pretriagem.peso}" a:placeholder="Peso (Kg)" styleClass="form-control input-lg"/>
+
+                                    <h:inputText id="edTemperatura" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.temperatura}" a:placeholder="Temperatura (ºC)" styleClass="form-control input-lg"/>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4 col-md-4">
+                                    <h:inputText id="edPeso" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.peso}" a:placeholder="Peso (Kg)" styleClass="form-control input-lg"/>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 col-md-4">   
-                                    <h:inputText id="edAltura" value="#{pretriagemMB.pretriagem.altura}" a:placeholder="Altura (m)" styleClass="form-control input-lg">
+                                    <h:inputText id="edAltura" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.altura}" a:placeholder="Altura (m)" styleClass="form-control input-lg">
                                         <f:convertNumber pattern="0.00"/>
                                     </h:inputText><br/>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <h:inputText id="edHemoglobina" value="#{pretriagemMB.pretriagem.hemoglobina}" a:placeholder="Hemoglobina (g/dL)" styleClass="form-control input-lg">
+                                    <h:inputText id="edHemoglobina" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.hemoglobina}" a:placeholder="Hemoglobina (g/dL)" styleClass="form-control input-lg">
                                         <f:convertNumber pattern="00.0"/>
                                     </h:inputText>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <h:inputText id="edHematocrito" value="#{pretriagemMB.pretriagem.hematocrito}" a:placeholder="Hematócrito (%)" styleClass="form-control input-lg">
+                                    <h:inputText id="edHematocrito" readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.hematocrito}" a:placeholder="Hematócrito (%)" styleClass="form-control input-lg">
                                         <f:convertNumber pattern="0.00"/>
                                     </h:inputText><br/>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <!--<h:outputLabel id="lbHabilitacaoTriagem" value="Triagem:"/> -->  
-                                    <h:selectOneMenu value = "#{pretriagemMB.pretriagem.habilitadoTriagem}" styleClass="form-control input-lg"> 
-                                        <f:selectItem itemValue = "True" itemLabel = "Habilitado" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "Não habilitado" />
+                                    <h:selectOneMenu readonly="true" value = "#{doacaoMB.triagem.pretriagemTriagem.habilitadoTriagem}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "Habilitado" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "Não habilitado" />
                                     </h:selectOneMenu>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-sm-6">
-                                    <h:selectOneMenu value="#{pretriagemMB.pretriagem.usuarioPretriagem}" converter="converterUsuario" styleClass="form-control input-lg">
-                                        <f:selectItems value="#{pretriagemMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
+                                    <h:selectOneMenu readonly="true" value="#{doacaoMB.triagem.pretriagemTriagem.usuarioPretriagem}" converter="converterUsuario" styleClass="form-control input-lg">
+                                        <f:selectItems itemDisabled="true" value="#{doacaoMB.usuarios}" var="u" itemLabel="#{u.nomeUsuario}" itemValue="#{u}"/>
                                     </h:selectOneMenu>
                                 </div>
                             </div>
@@ -289,9 +305,9 @@
                                 Já doou sangue alguma vez?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta1" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta1" value = "#{doacaoMB.triagem.pergunta1}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -302,9 +318,9 @@
                                 Já foi recusado como doador de sangue alguma vez?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta2" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta2" value = "#{doacaoMB.triagem.pergunta2}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -315,9 +331,9 @@
                                 Sente-se bem de saúde e em condições de doar sangue?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta3" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta3" value = "#{doacaoMB.triagem.pergunta3}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -328,9 +344,9 @@
                                 Tem sido saudável?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta4" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta4" value = "#{doacaoMB.triagem.pergunta4}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -341,9 +357,9 @@
                                 Teve no último mês algum problema de saúde? (exemplo: febre, gripe, diarréia ou outros)
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta5" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta5" value = "#{doacaoMB.triagem.pergunta5}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -354,9 +370,9 @@
                                 Teve alguma doença / acidente grave?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta6" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta6" value = "#{doacaoMB.triagem.pergunta6}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -367,9 +383,9 @@
                                 Já esteve internado no hospital?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta7" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta7" value = "#{doacaoMB.triagem.pergunta7}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -380,9 +396,9 @@
                                 Já teve convulsões?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta8" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta8" value = "#{doacaoMB.triagem.pergunta8}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -393,9 +409,9 @@
                                 Já foi operado
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta9" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta9" value = "#{doacaoMB.triagem.pergunta9}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -406,9 +422,9 @@
                                 Recebeu alguma transfusão de sangue ou derivados?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta10" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta10" value = "#{doacaoMB.triagem.pergunta10}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -419,9 +435,9 @@
                                 Perdeu peso nos últimos 3 meses por motivos de saúde desconhecidos?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta11" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta11" value = "#{doacaoMB.triagem.pergunta11}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -432,9 +448,9 @@
                                 Nos últimos 7 dias fez extração ou tratamentos dentários?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta12" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta12" value = "#{doacaoMB.triagem.pergunta12}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -445,9 +461,9 @@
                                 Nas últimas 4 semanas fez alguma vacina?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta13" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta13" value = "#{doacaoMB.triagem.pergunta13}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -458,9 +474,9 @@
                                 Tomou algum medicamento nos últimos 30 dias?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta14" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta14" value = "#{doacaoMB.triagem.pergunta14}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -471,9 +487,9 @@
                                 Nos últimos 6 meses fez endoscopia, tatuagem, piercing, ou acupuntura? 
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta15" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta15" value = "#{doacaoMB.triagem.pergunta15}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -484,9 +500,9 @@
                                 Fez transplante de córneas, tecidos, órgãos ou tratamento com hormônios de crescimento?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta16" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta16" value = "#{doacaoMB.triagem.pergunta16}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -497,9 +513,9 @@
                                 Doou sangue há menos de 3 meses (homens) ou 4 meses (mulheres)?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta17" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta17" value = "#{doacaoMB.triagem.pergunta17}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -510,9 +526,9 @@
                                 Houve algum problema nas doações anteriores?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta18" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta18" value = "#{doacaoMB.triagem.pergunta18}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -523,9 +539,9 @@
                                 Nos últimos 6 meses teve novo(a) parceiro(a) sexual?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta19" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta19" value = "#{doacaoMB.triagem.pergunta19}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -536,9 +552,9 @@
                                 Alguma vez consumiu drogas injetáveis ou inaláveis não receitadas por médico?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta20" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta20" value = "#{doacaoMB.triagem.pergunta20}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -549,9 +565,9 @@
                                 Alguma vez teve contatos sexuais a troco de dinheiro ou drogas?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta21" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta21" value = "#{doacaoMB.triagem.pergunta21}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -562,9 +578,9 @@
                                 É parceiro(a) sexual de alguém com comportamentos referidos nas perguntas anteriores?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta22" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta22" value = "#{doacaoMB.triagem.pergunta22}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -576,9 +592,9 @@
                                 Vírus da SIDA(HIV), Hepatite B, C, Sífilis ou receptor crônico de produtos sanguíneos? 
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta23" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta23" value = "#{doacaoMB.triagem.pergunta23}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -589,9 +605,9 @@
                                 Sendo mulher, está grávida, abortou ou teve parto nos últimos 6 meses?
                                 <h:form>
 
-                                    <h:selectOneRadio id="pergunta24" value = "#" > 
-                                        <f:selectItem itemValue = "True" itemLabel = "SIM" /> 
-                                        <f:selectItem itemValue = "False" itemLabel = "NÃO" />
+                                    <h:selectOneRadio readonly="true" id="pergunta24" value = "#{doacaoMB.triagem.pergunta24}" > 
+                                        <f:selectItem itemDisabled="true" itemValue = "True" itemLabel = "SIM" /> 
+                                        <f:selectItem itemDisabled="true" itemValue = "False" itemLabel = "NÃO" />
                                     </h:selectOneRadio>
                                 </h:form>
                             </div>
@@ -637,8 +653,8 @@
                                 </div><br />
 
                                 <div class="col-xs-12 col-sm-12 col-sm-12">
-                                    <h:selectOneMenu value="#{doacaoMB.doacao.receptor}" converter="converterReceptor" styleClass="form-control input-lg">
-                                        <f:selectItems  value="#{doacaoMB.receptores}" var="r" itemLabel="#{r.nomeReceptor}" itemValue="#{r}"/>
+                                    <h:selectOneMenu value="#{doacaoMB.doacao.receptor}" converter="converterDoador" styleClass="form-control input-lg">
+                                        <f:selectItems  value="#{doacaoMB.doadores}" var="d" itemLabel="#{d.nomeDoador}" itemValue="#{d}"/>
                                     </h:selectOneMenu><br />
                                 </div>
                                 

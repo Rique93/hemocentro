@@ -48,6 +48,18 @@ public class DAO<T> {
         return this.em.find(c, id);
     }
     
+    public List<T> getPretriagensHabilitadas(Class<T> c, boolean habilitadoTriagem, String sql){
+        Query query = this.em.createNamedQuery(sql, c);
+        query.setParameter("habilitado_triagem", habilitadoTriagem);
+        return query.getResultList();
+    }
+    
+    public List<T> getTriagensHabilitadas(Class<T> c, boolean habilitadoDoacao, String sql){
+        Query query = this.em.createNamedQuery(sql, c);
+        query.setParameter("habilitado_doacao", habilitadoDoacao);
+        return query.getResultList();
+    }
+    
 //    public T getByName(Class<T> c, String sql){
 //        Query query = this.em.createNamedQuery(sql, c);
 //        return (T) query.getSingleResult();

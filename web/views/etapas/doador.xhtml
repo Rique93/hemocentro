@@ -173,6 +173,22 @@
                                         <f:selectItem itemValue = "O Negativo" itemLabel = "(O-) - O Negativo" />
                                     </h:selectOneMenu>
                                 </div>
+                                
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <h:selectOneMenu value = "#{doadorMB.doador.tipo}" styleClass="form-control input-lg"> 
+                                        <f:selectItem itemValue = "Doador" itemLabel = "Doador" /> 
+                                        <f:selectItem itemValue = "Receptor" itemLabel = "Receptor" />
+                                        <f:selectItem itemValue = "Doador e receptor" itemLabel = "Doador e receptor" /> 
+                                    </h:selectOneMenu>
+                                    <br />
+                                </div>
+                                
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <!--<h:outputLabel id="lbHospital" value="Hospital:" />-->
+                                    <h:selectOneMenu value="#{doadorMB.doador.codigoHospital}" converter="converterHospital" styleClass="form-control input-lg">
+                                        <f:selectItems value="#{doadorMB.hospitais}" var="h" itemLabel="#{h.nomeHospital}" itemValue="#{h}"/>
+                                    </h:selectOneMenu><br/>
+                                </div>
 
                                 <div class="col-xs-12 col-sm-6 col-sm-6">
                                     <!--<h:outputLabel id="lbUsuarioIdentificacao" value="Usuário:" />-->
